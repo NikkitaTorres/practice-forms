@@ -1,31 +1,26 @@
 window.onload = function() {
-  let form = document.querySelector("form");
+  // we get the form element
+  const form = document.querySelector("form");
+  // we create an event handler for the form's submission
   form.onsubmit = function(event) {
     event.preventDefault();
-    const person1Input = document.getElementById("person1Input").value;
-    const person2Input = document.getElementById("person2Input").value;
-    const animalInput= document.getElementById("animalInput").value;
-    const exclamationInput = document.getElementById("exclamationInput").value;
-    const verbInput = document.getElementById("verbInput").value;
-    // Here's the first log we add.
-    console.log("verbInput = " + verbInput);
-    const nounInput = document.getElementById("nounInput").value;
-    
-    document.querySelector("span#person1a").innerText = person1Input;
-    document.querySelector("span#person1b").innerText = person1Input;
-    document.querySelector("span#person1c").innerText = person1Input;
-    document.querySelector("span#person2a").innerText = person2Input;
-    document.querySelector("span#person2b").innerText = person2Input;
-    document.querySelector("span#animal").innerText = animalInput;
 
-    console.log("Correctly targeting <span>? = ", document.querySelector("span#verb"));
-    console.log("Correctly targeting innerText? = ", document.querySelector("span#verb").inerText);
-    document.querySelector("span#verb").inerText = verbInput;
-    console.log("Correctly referencing verbInput and assigning value of innerText? = ", document.querySelector("span#verb").inerText);
-
-    document.querySelector("span#noun").innerText = nounInput;
-    document.querySelector("span#exclamation").innerText = exclamationInput;
+    // we access two HTML elements, the drink menu and the message to underaged folks,
+    // and add the hidden class to those elements;
+    // doing this clears results before displaying new ones, which
+    // allows the user to submit the form again and again, and
+    // see new results.
+    let drinkMenu = document.getElementById("drinks");
+    drinkMenu.setAttribute("class", "hidden");
+    let under21Message = document.getElementById("under-21");
+    under21Message.setAttribute("class", "hidden");
     
-    document.querySelector("div#story").removeAttribute("class");
+    // we gather the age value
+    const age = parseInt(document.querySelector("input#age").value);
+
+    // we check if the age is greater than 21.
+    if (age >= 21) {
+      drinkMenu.removeAttribute("class");
+    } 
   };
 };
