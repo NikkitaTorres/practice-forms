@@ -7,8 +7,6 @@ window.onload = function() {
     const animalInput= document.getElementById("animalInput").value;
     const exclamationInput = document.getElementById("exclamationInput").value;
     const verbInput = document.getElementById("verbInput").value;
-    // Here's the first log we add.
-    console.log("verbInput = " + verbInput);
     const nounInput = document.getElementById("nounInput").value;
     
     document.querySelector("span#person1a").innerText = person1Input;
