@@ -17,15 +17,9 @@ window.onload = function() {
     document.querySelector("span#person2a").innerText = person2Input;
     document.querySelector("span#person2b").innerText = person2Input;
     document.querySelector("span#animal").innerText = animalInput;
-
-    console.log("Correctly targeting <span>? = ", document.querySelector("span#verb"));
-    console.log("Correctly targeting innerText? = ", document.querySelector("span#verb").inerText);
     document.querySelector("span#verb").inerText = verbInput;
-    console.log("Correctly referencing verbInput and assigning value of innerText? = ", document.querySelector("span#verb").inerText);
-
     document.querySelector("span#noun").innerText = nounInput;
     document.querySelector("span#exclamation").innerText = exclamationInput;
-    
     document.querySelector("div#story").removeAttribute("class");
   };
 };
